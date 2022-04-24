@@ -18,3 +18,10 @@
     { content: 'PR', date: '2022-04-25', done: false },
   ]
 </script>
+
+<style>
+  ul {
+    padding-left: 0;
+    list-style: none;
+  }
+</style>

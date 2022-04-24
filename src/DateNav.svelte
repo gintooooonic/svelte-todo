@@ -1,4 +1,4 @@
-<div>
+<div class="date_nav">
   <span class="button">
     <img src="assets/images/arrow-left.svg" alt="button"/>
   </span>
@@ -16,6 +16,17 @@
 </script>
 
 <style>
+  .date_nav {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+  }
+
+  h1 {
+    margin: 0 25px;
+  }
+
   .button {
     display: inline-block;
     width: 32px;
