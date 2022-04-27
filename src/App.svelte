@@ -1,11 +1,17 @@
 <div class="app">
-	<DateNav/>
-	<TodoList/>
+	<DateNav {date} on:change={handleDateChange}/>
+	<TodoList {date}/>
 </div>
 
 <script>
 	import DateNav from './components/DateNav.svelte'
 	import TodoList from './components/TodoList.svelte'
+
+	let date = new Date()
+
+	function handleDateChange(event) {
+		date = event.detail.date
+	}
 </script>
 
 <style>
