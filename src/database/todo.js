@@ -1,15 +1,18 @@
-import { get, put, STORE_TODO } from "./database"
+import { connectDB, get, put, STORE_TODO } from "./database"
 
-function getTodoAll() {
-  return get(STORE_TODO)
+async function getTodoAll() {
+  const db = await connectDB()
+  return get(db, STORE_TODO)
 }
 
-function getTodo(id) {
-  return get(STORE_TODO, id)
+async function getTodo(id) {
+  const db = await connectDB()
+  return get(db, STORE_TODO, id)
 }
 
-function putTodo(item) {
-  put(STORE_TODO, item)
+async function putTodo(item) {
+  const db = await connectDB()
+  put(db, STORE_TODO, item)
 }
 
 export { getTodoAll, getTodo, putTodo }
