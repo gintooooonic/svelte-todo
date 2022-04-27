@@ -4,8 +4,8 @@
 </div>
 
 <script>
-	import DateNav from './DateNav.svelte'
-	import TodoList from './TodoList.svelte'
+	import DateNav from './components/DateNav.svelte'
+	import TodoList from './components/TodoList.svelte'
 </script>
 
 <style>
