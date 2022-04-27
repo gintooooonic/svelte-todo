@@ -12,7 +12,7 @@ async function getTodo(id) {
 
 async function putTodo(item) {
   const db = await connectDB()
-  put(db, STORE_TODO, item)
+  return put(db, STORE_TODO, item)
 }
 
 export { getTodoAll, getTodo, putTodo }

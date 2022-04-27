@@ -33,9 +33,12 @@ function get(database, storeName, id = null) {
 }
 
 function put(database, storeName, item) {
-  const transaction = database.transaction(storeName, "readwrite")
-  const store = transaction.objectStore(storeName)
-  store.add(item)
+  return new Promise((resolve, reject) => {
+    const transaction = database.transaction(storeName, "readwrite")
+    const store = transaction.objectStore(storeName)
+    const storeRequest = store.add(item)
+    storeRequest.onsuccess = () => resolve(storeRequest.result)
+  })
 }
 
 export { connectDB, get, put, STORE_TODO }
